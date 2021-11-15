@@ -12,12 +12,15 @@ char ** parse_args(char * line){
     returnThis[counter] = sub;
     counter++;
   }
-  printf("There are %d elements\n",counter);
+  //printf("There are %d elements\n",counter);
   return returnThis;
 }
 
 int main(){
-  char *test = "HELLO WORLD IDK WHAT I'M DOING";
+  char *test = "ls -a -l";
   char ** good = parse_args(test);
-
+  // for (int i = 0; i < 6; i++){
+  //   printf("The thing at good is %s\n",good[i]);
+  // }
+  execvp(good[0], good);
 }
